@@ -15,8 +15,13 @@
             name
         </label>
         <input type="text" name="name" id="">
+        <label for="">lastname</label>
+        <input type="text" name="lastname" id="">
         <label >email</label>
         <input type="email" name="email" id="">
+        <label for="">password</label>
+        <input type="password" name="password" id="">
+
         <button type="submit">submit</button>
 
     </form>

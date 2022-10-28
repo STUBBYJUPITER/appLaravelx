@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class UserController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::all();
-
-        //get only name of DB user
-        //return User::select('name')->get;
+        //
     }
 
     /**
@@ -27,8 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-
-        return view ('create_user');
+        //
     }
 
     /**
@@ -39,11 +34,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user=User::create($request->all());
-        return $user;
-        //echo $request ->name;
+        //
     }
-
 
     /**
      * Display the specified resource.
@@ -53,8 +45,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //show user from id in database
-        return User::find($id);
+        //
     }
 
     /**
