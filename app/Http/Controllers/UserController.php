@@ -14,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::all();
+        $users=Users::all();
+        //funcion para enviar la variable user a la vista
+        return view('users.index',compact('users'));
 
         //get only name of DB user
         //return User::select('name')->get;
@@ -53,8 +55,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //show user from id in database
-        return User::find($id);
+        $user=User::find($id);
+        return view('users.update',compact('user'));
+
     }
 
     /**

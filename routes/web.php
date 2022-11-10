@@ -24,18 +24,32 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
-//route user show user in controller
-Route::get('/users',[UserController::class, 'index']);
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
-//route using create class in controller
-Route::get('/users/create',[UserController::class, 'create']);
 
-//route using show class in controller
-Route::get('/users/{id}',[UserController::class, 'show']);
+//group of middleware, necessary authentication
+Route::middleware(['auth'])->group(function () {
+        //route user show user in controller
+    Route::get('/users',[UserController::class, 'index']);
 
-//route using store for post in create_user views
-Route::post('/users',[UserController::class, 'store']);
+    //route using create class in controller
+    Route::get('/users/create',[UserController::class, 'create']);
+
+    //route using show class in controller
+    Route::get('/users/{id}',[UserController::class, 'show']);
+
+    //route using store for post in create_user views
+    Route::post('/users',[UserController::class, 'store']);
+
+});
+
+
 
 
 
