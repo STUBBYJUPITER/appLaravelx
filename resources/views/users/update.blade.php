@@ -12,7 +12,8 @@
     </h1>
     <form action="http://127.0.0.1:8000/users/" method="post">
         @csrf
-
+        @method('PUT')
+        <input type="hidden" name ="id" value="{{$user->id}}">
         <label >
             name
         </label>
